@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopping_nav_graph"
+    app:startDestination="@id/destination_shopping">
+
+    <fragment
+        android:id="@+id/destination_shopping"
+        android:name="com.logan.kotlinshopping.tabs.ShoppingFragment"
+        tools:layout="">
+        <action
+            android:id="@+id/action_shopping_to_cart"
+            app:destination="@+id/destination_cart" />
+        <action
+            android:id="@+id/action_shopping_to_orders"
+            app:destination="@+id/destination_orders" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_cart"
+        android:name="com.logan.kotlinshopping.tabs.CartFragment"
+        tools:layout="">
+        <action
+            android:id="@+id/action_cart_to_shopping"
+            app:destination="@+id/destination_shopping" />
+        <action
+            android:id="@+id/action_cart_to_orders"
+            app:destination="@+id/destination_orders" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_orders"
+        android:name="com.logan.kotlinshopping.tabs.OrdersFragment"
+        tools:layout="">
+        <action
+            android:id="@+id/action_orders_to_shopping"
+            app:destination="@+id/destination_shopping" />
+        <action
+            android:id="@+id/action_orders_to_cart"
+            app:destination="@+id/destination_cart" />
+    </fragment>
+
+</navigation>
